@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tharraniah Tamilwanan — Data, NLP &amp; Research Analytics</title>
-<meta name="description" content="Portfolio of Tharraniah Tamilwanan — Data Science graduate working across research analytics, NLP, aspect-based sentiment analysis, machine learning, dashboards, and web applications." />
+<title>Tharraniah Tamilwanan — AI, LLM &amp; Data Science Portfolio</title>
+<meta name="description" content="AI and data science portfolio of Tharraniah Tamilwanan — focused on LLM evaluation, NLP, aspect-based sentiment analysis, machine learning, analytics, and intelligent applications." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -199,12 +199,297 @@
     html{scroll-behavior:auto}
   }
 </style>
+<style id="ai-llm-theme">
+  :root{
+    --ink:#EAF6FF;
+    --ink-soft:#A9BED2;
+    --bg:#050713;
+    --surface:#0B1120;
+    --surface-2:#10182B;
+    --line:#1C2A43;
+    --indigo:#7A6CFF;
+    --teal:#2AF3D1;
+    --coral:#FF7798;
+    --amber:#FFC85A;
+    --violet:#B56EFF;
+    --muted:#7F93AA;
+    --maxw:1120px;
+  }
+
+  html{color-scheme:dark}
+  body{
+    position:relative;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 82% 6%,rgba(122,108,255,.18),transparent 28%),
+      radial-gradient(circle at 14% 32%,rgba(42,243,209,.08),transparent 24%),
+      radial-gradient(circle at 78% 76%,rgba(181,110,255,.08),transparent 26%),
+      var(--bg);
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+    opacity:.38;
+    background-image:
+      linear-gradient(rgba(93,130,170,.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(93,130,170,.06) 1px,transparent 1px),
+      radial-gradient(circle at center,rgba(42,243,209,.15) 1px,transparent 1.5px);
+    background-size:44px 44px,44px 44px,88px 88px;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.7) 45%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.7) 45%,transparent 100%);
+  }
+  body > *{position:relative;z-index:1}
+  ::selection{background:rgba(42,243,209,.28);color:#fff}
+
+  header.nav{
+    background:rgba(5,7,19,.74);
+    border-bottom:1px solid rgba(90,126,165,.2);
+    box-shadow:0 10px 35px rgba(0,0,0,.22);
+  }
+  .brand{color:#DFF9FF;text-shadow:0 0 18px rgba(42,243,209,.2)}
+  .brand .dot{background:linear-gradient(90deg,var(--teal),#6FD8FF,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .nav-links a{color:#A9BED2}
+  .nav-links a:hover{color:var(--teal);text-shadow:0 0 14px rgba(42,243,209,.35)}
+  .nav-cta{
+    color:#051118;
+    background:linear-gradient(120deg,var(--teal),#6FD8FF);
+    box-shadow:0 0 0 1px rgba(42,243,209,.16),0 10px 30px -12px rgba(42,243,209,.75);
+  }
+  .nav-cta:hover{box-shadow:0 0 22px rgba(42,243,209,.24),0 14px 34px -12px rgba(42,243,209,.85)}
+  .menu-btn{color:var(--ink)}
+
+  .hero{
+    isolation:isolate;
+    background:linear-gradient(180deg,rgba(7,11,25,.4),rgba(5,7,19,.12));
+    border-bottom:1px solid rgba(90,126,165,.2);
+  }
+  .hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background:
+      linear-gradient(rgba(42,243,209,.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(42,243,209,.055) 1px,transparent 1px);
+    background-size:34px 34px;
+    -webkit-mask-image:radial-gradient(circle at 78% 45%,#000 0%,rgba(0,0,0,.9) 28%,transparent 65%);
+    mask-image:radial-gradient(circle at 78% 45%,#000 0%,rgba(0,0,0,.9) 28%,transparent 65%);
+  }
+  .hero-inner{padding:96px 0 78px;min-height:540px;display:flex;flex-direction:column;justify-content:center}
+  .hero-inner::after{
+    content:"AI";
+    position:absolute;
+    right:4%;
+    top:50%;
+    width:300px;
+    height:300px;
+    transform:translateY(-50%);
+    display:grid;
+    place-items:center;
+    border-radius:50%;
+    border:1px solid rgba(42,243,209,.28);
+    color:rgba(234,246,255,.88);
+    font:600 72px/1 var(--mono);
+    letter-spacing:.08em;
+    text-shadow:0 0 26px rgba(42,243,209,.55);
+    box-shadow:
+      0 0 0 34px rgba(122,108,255,.045),
+      0 0 0 70px rgba(42,243,209,.025),
+      inset 0 0 50px rgba(42,243,209,.06),
+      0 0 65px rgba(122,108,255,.14);
+    background:
+      radial-gradient(circle at center,rgba(42,243,209,.08),transparent 52%),
+      conic-gradient(from 0deg,rgba(42,243,209,.18),transparent 14%,rgba(181,110,255,.2) 28%,transparent 43%,rgba(111,216,255,.2) 58%,transparent 74%,rgba(42,243,209,.18));
+    animation:aiFloat 8s ease-in-out infinite;
+    z-index:-1;
+  }
+  @keyframes aiFloat{0%,100%{transform:translateY(-50%) rotate(-2deg)}50%{transform:translateY(calc(-50% - 12px)) rotate(2deg)}}
+  .blob{filter:blur(100px);opacity:.26;mix-blend-mode:screen}
+  .blob.b1{background:radial-gradient(circle,#7A6CFF,transparent 70%)}
+  .blob.b2{background:radial-gradient(circle,#2AF3D1,transparent 70%)}
+  .blob.b3{background:radial-gradient(circle,#B56EFF,transparent 70%)}
+  .eyebrow{
+    color:#9EFBEA;
+    background:rgba(42,243,209,.06);
+    border:1px solid rgba(42,243,209,.2);
+    box-shadow:inset 0 0 22px rgba(42,243,209,.025),0 0 24px rgba(42,243,209,.045);
+  }
+  h1{color:#F6FBFF;text-shadow:0 18px 60px rgba(0,0,0,.45)}
+  h1 .grad{background:linear-gradient(105deg,var(--teal) 4%,#7DDCFF 38%,var(--indigo) 67%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px rgba(122,108,255,.18))}
+  .lede{color:#B7C9D8;max-width:650px}
+  .btn-solid{color:#041014;background:linear-gradient(120deg,var(--teal),#71D9FF);box-shadow:0 0 28px rgba(42,243,209,.16),0 14px 32px -18px rgba(42,243,209,.95)}
+  .btn-solid:hover{box-shadow:0 0 34px rgba(42,243,209,.24),0 18px 36px -18px rgba(42,243,209,1)}
+  .btn-ghost{background:rgba(10,16,31,.72);color:#DDF5FF;border-color:rgba(118,153,189,.28)}
+  .btn-ghost:hover{border-color:var(--teal);color:var(--teal);box-shadow:0 0 22px rgba(42,243,209,.08)}
+
+  .ribbon{background:rgba(7,11,24,.72);border-bottom:1px solid rgba(90,126,165,.2)}
+  .metric{
+    background:linear-gradient(180deg,rgba(15,23,42,.92),rgba(9,14,28,.92));
+    border-right-color:rgba(90,126,165,.18);
+  }
+  .metric::before{box-shadow:0 0 16px var(--mc)}
+  .metric .lbl{color:#8297AD}
+  .metric .num .unit{color:#7C91A7}
+
+  section{position:relative}
+  .sec-title{color:#EEF8FF}
+  .sec-num{color:#051016;box-shadow:0 0 18px color-mix(in srgb,var(--sc) 35%,transparent)}
+  .sec-line{opacity:.62}
+  .about p{color:#B1C3D4}
+  .about .hl{color:var(--teal);text-shadow:0 0 16px rgba(42,243,209,.18)}
+
+  .skill-block{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(160deg,rgba(16,24,43,.94),rgba(8,14,27,.94));
+    border-color:rgba(87,124,162,.22);
+    box-shadow:0 18px 44px -30px rgba(0,0,0,.9);
+  }
+  .skill-block::after{
+    content:"";
+    position:absolute;
+    width:150px;height:150px;border-radius:50%;
+    right:-70px;top:-85px;
+    background:radial-gradient(circle,var(--kc),transparent 68%);
+    opacity:.12;
+    pointer-events:none;
+  }
+  .skill-block .cat{color:color-mix(in srgb,var(--kc) 78%,white)}
+  .skill-block .chip{
+    color:#DCEAF5;
+    background:rgba(255,255,255,.045);
+    border-color:rgba(122,154,188,.17);
+  }
+  .skill-block .chip:hover{border-color:color-mix(in srgb,var(--kc) 55%,transparent);box-shadow:0 0 18px color-mix(in srgb,var(--kc) 12%,transparent)}
+
+  .fyp-card{
+    background:
+      radial-gradient(circle at 90% 10%,rgba(42,243,209,.13),transparent 25%),
+      radial-gradient(circle at 4% 100%,rgba(181,110,255,.15),transparent 28%),
+      linear-gradient(135deg,#0B1122,#11172C 52%,#121026);
+    border:1px solid rgba(106,142,180,.24);
+    box-shadow:0 30px 80px -45px rgba(42,243,209,.25),inset 0 1px 0 rgba(255,255,255,.035);
+  }
+  .fyp-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    opacity:.22;
+    pointer-events:none;
+    background-image:
+      linear-gradient(rgba(42,243,209,.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(42,243,209,.055) 1px,transparent 1px);
+    background-size:38px 38px;
+    -webkit-mask-image:linear-gradient(90deg,transparent,black 45%,black);
+    mask-image:linear-gradient(90deg,transparent,black 45%,black);
+  }
+  .fyp-card::after{background:radial-gradient(circle,rgba(42,243,209,.32),transparent 70%);opacity:.55}
+  .fyp-tag{color:#A8FFF0;border-color:rgba(42,243,209,.28);background:rgba(42,243,209,.05)}
+  .fyp-card .intro{color:#BCCBE0}
+  .fyp-setup .s{background:rgba(255,255,255,.045);border-color:rgba(123,153,188,.2);color:#D7E7F5}
+  .fyp-block-title{color:#8CA5BE}
+  .ap,.find{background:rgba(255,255,255,.035);border-color:rgba(117,150,184,.18)}
+  .ap .d,.find .what{color:#B3C4D8}
+  .takeaway{background:rgba(42,243,209,.07);color:#DDFBF5;box-shadow:inset 0 0 25px rgba(42,243,209,.02)}
+  .fyp-tags .tag{color:#BCD0E0;border-color:rgba(126,157,188,.24);background:rgba(255,255,255,.025)}
+  .fyp-note{color:#8198B1}
+  .fyp-table th,.fyp-table td{border-bottom-color:rgba(122,153,184,.16)}
+  .fyp-table th{color:#8EA5BD}
+  .fyp-table td{color:#BDCCE0}
+
+  .proj{
+    background:linear-gradient(155deg,rgba(15,23,42,.96),rgba(8,13,27,.96));
+    border-color:rgba(91,128,166,.22);
+    box-shadow:0 18px 48px -38px rgba(0,0,0,.95);
+  }
+  .proj:hover{box-shadow:0 28px 70px -40px color-mix(in srgb,var(--pc) 45%,black),0 0 0 1px color-mix(in srgb,var(--pc) 28%,transparent)}
+  .proj-vis{border-right:1px solid rgba(102,136,170,.16)}
+  .proj-vis::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:24px 24px;
+    -webkit-mask-image:linear-gradient(to right,rgba(0,0,0,.75),transparent);
+    mask-image:linear-gradient(to right,rgba(0,0,0,.75),transparent);
+  }
+  .proj-vis svg,.proj-vis .badge{z-index:2}
+  .proj-vis .badge{background:rgba(2,8,17,.48);border-color:rgba(255,255,255,.26);backdrop-filter:blur(8px)}
+  .proj h3{color:#F1F8FF}
+  .proj p{color:#AFC1D2}
+  .proj-kpi{color:color-mix(in srgb,var(--pc) 76%,white);background:color-mix(in srgb,var(--pc) 11%,transparent);border:1px solid color-mix(in srgb,var(--pc) 20%,transparent)}
+  .proj-date{color:#8296AA}
+  .tag{color:#9FB3C6;border-color:rgba(108,141,174,.22);background:rgba(255,255,255,.025)}
+  .proj-link{color:color-mix(in srgb,var(--pc) 76%,white);background:color-mix(in srgb,var(--pc) 9%,transparent);border-color:color-mix(in srgb,var(--pc) 17%,transparent)}
+
+  .entry{border-left-color:rgba(99,136,172,.25)}
+  .entry::before{background:linear-gradient(120deg,var(--teal),var(--violet));border-color:var(--bg);box-shadow:0 0 14px rgba(42,243,209,.32)}
+  .entry .role{color:#EFF8FF}
+  .entry .org{color:#76EEDD}
+  .entry .when{color:#8095AA}
+  .entry li{color:#AEC0D1}
+  .entry li::before{color:var(--teal)}
+  .edu-card{
+    background:linear-gradient(155deg,rgba(15,23,42,.94),rgba(8,14,27,.94));
+    border-color:rgba(89,126,162,.22);
+    box-shadow:0 16px 42px -34px rgba(0,0,0,.95);
+  }
+  .edu-card .deg{color:#EEF8FF}
+  .edu-card .inst{color:#AABCCE}
+  .edu-card .facts{color:color-mix(in srgb,var(--ec) 74%,white)}
+
+  .contact{
+    background:
+      radial-gradient(circle at 12% 15%,rgba(42,243,209,.16),transparent 28%),
+      radial-gradient(circle at 90% 84%,rgba(181,110,255,.2),transparent 30%),
+      linear-gradient(135deg,#0B1324,#11172C 60%,#17112B);
+    border:1px solid rgba(103,141,177,.28);
+    box-shadow:0 28px 80px -48px rgba(42,243,209,.28),inset 0 1px 0 rgba(255,255,255,.04);
+  }
+  .contact::before{background:radial-gradient(circle,rgba(42,243,209,.22),transparent 70%)}
+  .contact::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    opacity:.25;
+    background-image:
+      linear-gradient(rgba(42,243,209,.055) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(42,243,209,.055) 1px,transparent 1px);
+    background-size:34px 34px;
+    -webkit-mask-image:radial-gradient(circle at center,#000,transparent 76%);
+    mask-image:radial-gradient(circle at center,#000,transparent 76%);
+  }
+  .contact h2,.contact p,.contact-links{z-index:2}
+  .contact p{color:#C2D1DE}
+  .clink{background:rgba(7,13,26,.5);border-color:rgba(144,177,208,.28);color:#E5F7FF;backdrop-filter:blur(10px)}
+  .clink:hover{background:rgba(42,243,209,.12);color:var(--teal);border-color:rgba(42,243,209,.5);box-shadow:0 0 22px rgba(42,243,209,.12)}
+  footer .small{color:#72879C}
+
+  @media(max-width:980px){
+    .hero-inner::after{right:-80px;opacity:.48}
+  }
+  @media(max-width:820px){
+    .nav-links.open{background:rgba(8,13,27,.98);border-bottom-color:rgba(90,126,165,.25)}
+    .hero-inner{min-height:auto;padding:78px 0 66px}
+    .hero-inner::after{display:none}
+    .proj-vis{border-right:none;border-bottom:1px solid rgba(102,136,170,.16)}
+  }
+</style>
+
 </head>
 <body>
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand">tharraniah<span class="dot">.</span>analytics</a>
+    <a href="#top" class="brand">tharraniah<span class="dot">.</span>ai</a>
     <nav class="nav-links" id="navlinks">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -221,7 +506,7 @@
 <section class="hero" id="top" style="padding:0">
   <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
   <div class="wrap hero-inner">
-    <span class="eyebrow"><span class="pulse"></span>Open to graduate analyst roles · 2026</span>
+    <span class="eyebrow"><span class="pulse"></span>AI · LLM Evaluation · NLP · Analytics</span>
     <h1>Tharraniah<br><span class="grad">Tamilwanan.</span></h1>
     <p class="lede">Data Science graduate turning research, review, and operational data into clear, decision-ready insights — across analytics, NLP, machine learning, dashboards, and web applications.</p>
     <div class="hero-actions">
@@ -519,13 +804,12 @@
 <section id="contact" style="padding-top:0">
   <div class="wrap">
     <div class="contact reveal">
-      <h2>Let's talk data.</h2>
+      <h2>Let's talk AI &amp; data.</h2>
       <p>Open to graduate roles in data, research, NLP, and business intelligence. I'd be glad to walk through any project in detail.</p>
       <div class="contact-links">
         <a class="clink" href="mailto:tharraniah18@gmail.com">✉ tharraniah18@gmail.com</a>
         <a class="clink" href="https://www.linkedin.com/in/tharraniah-t-121938272" target="_blank" rel="noopener">in · LinkedIn</a>
-        <a class="clink" href="https://github.com/Vengga/CDS6344_Group9_Project" target="_blank" rel="noopener">⌥ ABSA Project GitHub</a>
-      </div>
+              </div>
     </div>
   </div>
 </section>
