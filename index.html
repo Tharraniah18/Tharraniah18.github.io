@@ -3,827 +3,436 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tharraniah Tamilwanan — AI, LLM &amp; Data Science Portfolio</title>
-<meta name="description" content="AI and data science portfolio of Tharraniah Tamilwanan — focused on LLM evaluation, NLP, aspect-based sentiment analysis, machine learning, analytics, and intelligent applications." />
+<title>Tharraniah Tamilwanan — Research, Analytics & Data Science</title>
+<meta name="description" content="Portfolio of Tharraniah Tamilwanan, a Data Science graduate focused on research, data analytics, quantitative analysis, business intelligence, AI evaluation and NLP." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
-  :root{
-    --ink:#1B1535;
-    --ink-soft:#3C3560;
-    --bg:#F5F4FB;
-    --surface:#FFFFFF;
-    --line:#E7E3F2;
-    --indigo:#5B53E8;
-    --teal:#0FB0A3;
-    --coral:#FB6A5B;
-    --amber:#F4A126;
-    --violet:#9A50E6;
-    --muted:#716C8C;
-    --maxw:1080px;
-    --display:'Space Grotesk',system-ui,sans-serif;
-    --body:'Inter',system-ui,sans-serif;
-    --mono:'IBM Plex Mono',ui-monospace,monospace;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:76px}
-  body{font-family:var(--body);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+:root{
+  --navy:#102A43;
+  --navy-2:#173F5F;
+  --blue:#2563A6;
+  --teal:#0F7B78;
+  --ink:#162433;
+  --muted:#607286;
+  --bg:#F4F7FA;
+  --surface:#FFFFFF;
+  --soft:#EAF1F6;
+  --line:#DCE5EC;
+  --green:#2D7D66;
+  --gold:#A66A13;
+  --max:1120px;
+  --display:'Manrope',system-ui,sans-serif;
+  --body:'DM Sans',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:78px}
+body{font-family:var(--body);background:var(--bg);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max);margin:auto;padding:0 28px}
 
-  /* ---------- NAV ---------- */
-  header.nav{position:sticky;top:0;z-index:50;background:rgba(245,244,251,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .brand{font-family:var(--mono);font-size:14px;letter-spacing:.02em;font-weight:600}
-  .brand .dot{background:linear-gradient(90deg,var(--indigo),var(--violet),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .nav-links{display:flex;gap:28px;align-items:center}
-  .nav-links a{font-size:14px;color:var(--ink-soft);font-weight:500;transition:color .2s}
-  .nav-links a:hover{color:var(--indigo)}
-  .nav-cta{font-family:var(--mono);font-size:13px;font-weight:500;border-radius:6px;padding:8px 15px;color:#fff;background:linear-gradient(120deg,var(--indigo),var(--violet));transition:.2s;box-shadow:0 6px 18px -8px var(--indigo)}
-  .nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px -8px var(--indigo)}
-  .menu-btn{display:none;background:none;border:none;cursor:pointer;font-family:var(--mono);font-size:13px;color:var(--ink)}
+/* Navigation */
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:var(--display);font-weight:800;letter-spacing:-.02em;color:var(--navy);font-size:17px}
+.brand span{color:var(--teal)}
+.nav-links{display:flex;align-items:center;gap:24px}
+.nav-links a{font-size:13.5px;font-weight:600;color:#52687A;transition:.2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-links .cta{padding:9px 15px;border-radius:7px;background:var(--navy);color:white}
+.menu-btn{display:none;border:0;background:transparent;font:600 13px var(--body);color:var(--navy);cursor:pointer}
 
-  /* ---------- HERO ---------- */
-  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:var(--surface)}
-  .blob{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0;animation:float 14s ease-in-out infinite}
-  .blob.b1{width:420px;height:420px;background:radial-gradient(circle,#7C74FF,transparent 70%);top:-120px;right:-60px}
-  .blob.b2{width:360px;height:360px;background:radial-gradient(circle,#19D3C5,transparent 70%);top:60px;right:240px;animation-delay:-4s}
-  .blob.b3{width:300px;height:300px;background:radial-gradient(circle,#FF8C7F,transparent 70%);top:-40px;right:420px;animation-delay:-8s;opacity:.4}
-  @keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,24px)}}
-  .hero-inner{position:relative;z-index:1;padding:80px 0 64px}
-  .eyebrow{font-family:var(--mono);font-size:13px;color:var(--violet);letter-spacing:.06em;text-transform:uppercase;margin-bottom:22px;display:inline-flex;align-items:center;gap:9px;background:rgba(154,80,230,.08);padding:7px 13px;border-radius:30px}
-  .eyebrow .pulse{width:8px;height:8px;border-radius:50%;background:var(--teal);box-shadow:0 0 0 0 rgba(15,176,163,.5);animation:pulse 2.4s infinite}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(15,176,163,.45)}70%{box-shadow:0 0 0 8px rgba(15,176,163,0)}100%{box-shadow:0 0 0 0 rgba(15,176,163,0)}}
-  h1{font-family:var(--display);font-weight:600;font-size:clamp(40px,7vw,72px);line-height:1;letter-spacing:-.025em;margin-bottom:20px}
-  h1 .grad{background:linear-gradient(115deg,var(--indigo) 10%,var(--violet) 45%,var(--coral) 80%,var(--amber));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .lede{font-size:clamp(17px,2.2vw,21px);color:var(--ink-soft);max-width:620px;font-weight:400}
-  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:32px}
-  .btn{font-family:var(--mono);font-size:13px;font-weight:500;padding:12px 20px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;transition:.2s}
-  .btn-solid{color:#fff;background:linear-gradient(120deg,var(--indigo),var(--violet));box-shadow:0 10px 26px -12px var(--indigo)}
-  .btn-solid:hover{transform:translateY(-2px);box-shadow:0 16px 30px -12px var(--indigo)}
-  .btn-ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
-  .btn-ghost:hover{border-color:var(--indigo);color:var(--indigo)}
+/* Hero */
+.hero{background:linear-gradient(180deg,#FFFFFF 0%,#F6F9FB 100%);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(37,99,166,.09),rgba(15,123,120,.04) 48%,transparent 70%)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.7fr);gap:58px;align-items:center;padding:88px 0 76px}
+.eyebrow{display:inline-block;font:500 11.5px var(--mono);letter-spacing:.055em;text-transform:uppercase;color:var(--teal);background:#E7F4F2;border:1px solid #CCE6E2;border-radius:999px;padding:7px 11px;margin-bottom:22px}
+h1{font:800 clamp(42px,6.2vw,68px)/1.02 var(--display);letter-spacing:-.04em;color:var(--navy);margin-bottom:13px}
+.role{font:700 clamp(20px,2.8vw,28px)/1.25 var(--display);color:var(--blue);margin-bottom:18px}
+.lede{font-size:17px;color:#4D6275;max-width:700px}
+.hero-note{margin-top:18px;color:var(--muted);font-size:14.5px;max-width:700px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:7px;font-size:13.5px;font-weight:700;transition:.2s}
+.btn-primary{background:var(--navy);color:#fff;box-shadow:0 8px 22px rgba(16,42,67,.16)}
+.btn-primary:hover{transform:translateY(-1px);background:#173F5F}
+.btn-outline{background:white;border:1px solid #BCCAD5;color:var(--navy)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue)}
+.profile-card{background:white;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 18px 50px rgba(16,42,67,.08)}
+.profile-card h2{font:700 15px var(--display);color:var(--navy);margin-bottom:18px}
+.snapshot{display:grid;gap:14px}
+.snap{display:flex;align-items:center;justify-content:space-between;gap:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.snap:last-child{border-bottom:0;padding-bottom:0}
+.snap .label{font-size:12.5px;color:var(--muted)}
+.snap .value{font:700 16px var(--display);color:var(--navy);text-align:right}
+.snap.award{align-items:flex-start}
+.snap.award .value{font-size:13px;line-height:1.4;color:var(--gold)}
 
-  /* ---------- METRIC RIBBON ---------- */
-  .ribbon{border-bottom:1px solid var(--line);background:var(--bg)}
-  .ribbon-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-  .metric{padding:28px 24px;border-right:1px solid var(--line);position:relative;background:var(--surface)}
-  .metric::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--mc)}
-  .metric:last-child{border-right:none}
-  .metric .num{font-family:var(--display);font-weight:600;font-size:clamp(27px,3.4vw,35px);letter-spacing:-.01em;line-height:1;color:var(--mc)}
-  .metric .num .unit{font-size:.5em;color:var(--muted);margin-left:4px;font-family:var(--mono);font-weight:500}
-  .metric .lbl{font-family:var(--mono);font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-top:11px;line-height:1.45}
+/* General */
+section{padding:76px 0}
+.section-head{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-bottom:34px}
+.section-kicker{font:500 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--teal)}
+.section-title{font:750 clamp(26px,3vw,34px)/1.15 var(--display);color:var(--navy);letter-spacing:-.02em}
+.section-line{grid-column:2;height:1px;background:linear-gradient(90deg,var(--line),transparent);margin-top:-8px}
+.section-intro{max-width:780px;color:var(--muted);font-size:15.5px;margin:-16px 0 30px 0}
 
-  /* ---------- SECTIONS ---------- */
-  section{padding:76px 0}
-  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:40px}
-  .sec-num{font-family:var(--mono);font-size:13px;font-weight:600;color:#fff;background:var(--sc,var(--indigo));border-radius:5px;padding:3px 8px;align-self:center}
-  .sec-title{font-family:var(--display);font-weight:600;font-size:clamp(25px,3.4vw,33px);letter-spacing:-.01em}
-  .sec-line{flex:1;height:2px;background:linear-gradient(90deg,var(--sc,var(--indigo)),transparent);align-self:center;border-radius:2px}
+/* About */
+.about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:start}
+.about-copy{font-size:17px;color:#40576B}
+.about-copy p+p{margin-top:15px}
+.about-copy strong{color:var(--navy)}
+.target-card{background:var(--navy);border-radius:14px;padding:24px;color:#fff}
+.target-card h3{font:700 16px var(--display);margin-bottom:14px}
+.target-card p{font-size:14px;color:#D8E4EC;margin-bottom:15px}
+.target-list{display:flex;flex-wrap:wrap;gap:8px}
+.target-list span{font-size:12px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.14);padding:6px 9px;border-radius:5px;color:#F3F7FA}
 
-  .about p{font-size:18px;color:var(--ink-soft);max-width:770px}
-  .about p + p{margin-top:18px}
-  .about .hl{color:var(--indigo);font-weight:600}
+/* Capabilities */
+.cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.cap{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;border-top:3px solid var(--cap)}
+.cap h3{font:700 15px var(--display);color:var(--navy);margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{font-size:12.5px;color:#41576A;background:#F5F8FA;border:1px solid #E1E8ED;padding:6px 9px;border-radius:5px}
 
-  /* ---------- SKILLS ---------- */
-  .skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-  .skill-block{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;border-top:3px solid var(--kc)}
-  .skill-block .cat{font-family:var(--mono);font-size:12px;color:var(--kc);text-transform:uppercase;letter-spacing:.05em;margin-bottom:15px;font-weight:600}
-  .chips{display:flex;flex-wrap:wrap;gap:8px}
-  .chip{background:var(--kc-bg);border:1px solid transparent;border-radius:7px;padding:6px 12px;font-size:13.5px;color:var(--kc-tx);font-weight:500;transition:.18s}
-  .chip:hover{transform:translateY(-2px)}
+/* Featured Research */
+.research-card{background:var(--navy);color:white;border-radius:16px;overflow:hidden;box-shadow:0 18px 55px rgba(16,42,67,.12)}
+.research-top{padding:34px 36px 30px;border-bottom:1px solid rgba(255,255,255,.14);position:relative}
+.award-badge{display:inline-flex;align-items:center;font:600 11px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:#FFE9B3;background:rgba(194,131,28,.18);border:1px solid rgba(255,219,143,.3);border-radius:999px;padding:7px 10px;margin-bottom:16px}
+.research-top h3{font:700 clamp(24px,3vw,32px)/1.25 var(--display);max-width:870px;letter-spacing:-.02em}
+.research-top p{margin-top:15px;color:#D6E3EB;max-width:900px;font-size:15.5px}
+.research-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:rgba(255,255,255,.12)}
+.rstat{background:#163750;padding:19px 18px}
+.rstat b{display:block;font:700 23px var(--display);color:#fff}
+.rstat span{font-size:11.5px;color:#BCD0DD}
+.research-body{padding:28px 36px 34px;background:#123047}
+.research-body h4{font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.07em;color:#8FD5D2;margin-bottom:12px}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+.metric{border:1px solid rgba(255,255,255,.13);border-radius:9px;padding:15px;background:rgba(255,255,255,.045)}
+.metric strong{display:block;font:700 14px var(--display);margin-bottom:4px}
+.metric span{font-size:12.5px;color:#C9D8E2}
+.result-table{overflow-x:auto;margin:4px 0 22px}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:12.5px}
+th,td{padding:10px 11px;text-align:left;border-bottom:1px solid rgba(255,255,255,.1)}
+th{font:500 10.5px var(--mono);letter-spacing:.04em;text-transform:uppercase;color:#9FC1D3}
+td{color:#DCE7ED}td:first-child{font-weight:700;color:#fff}
+.takeaway{border-left:3px solid #5BC0BE;background:rgba(91,192,190,.09);border-radius:0 7px 7px 0;padding:14px 16px;color:#E7F3F4;font-size:14px}
+.research-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.research-tags span{font:500 11px var(--mono);border:1px solid rgba(255,255,255,.17);border-radius:5px;padding:5px 8px;color:#C7D8E2}
 
-  /* ---------- FEATURED FYP ---------- */
-  .fyp{position:relative}
-  .fyp-card{background:linear-gradient(135deg,#221A4A,#3A2470 55%,#5B2C7A);border-radius:20px;padding:46px;color:#EFEAFB;position:relative;overflow:hidden}
-  .fyp-card::after{content:"";position:absolute;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(15,176,163,.4),transparent 70%);top:-120px;right:-80px;filter:blur(20px)}
-  .fyp-tag{position:relative;z-index:1;display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#C9B8FF;border:1px solid rgba(201,184,255,.35);padding:6px 12px;border-radius:30px;margin-bottom:20px}
-  .fyp-card h3{position:relative;z-index:1;font-family:var(--display);font-weight:600;font-size:clamp(23px,3.2vw,30px);line-height:1.15;color:#fff;max-width:680px;letter-spacing:-.01em}
-  .fyp-card .intro{position:relative;z-index:1;color:#CFC6EC;max-width:680px;margin-top:16px;font-size:16px}
-  .fyp-setup{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-  .fyp-setup .s{font-family:var(--mono);font-size:12.5px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:8px 13px;color:#E7DEFB}
-  .fyp-setup .s b{color:#fff}
-  .fyp-block-title{position:relative;z-index:1;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#A99BD8;margin:34px 0 14px}
-  .approach{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-  .ap{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px;border-top:3px solid var(--apc)}
-  .ap .t{font-family:var(--display);font-weight:600;font-size:15.5px;color:#fff}
-  .ap .d{font-size:13.5px;color:#C6BCE6;margin-top:6px;line-height:1.5}
-  .findings{position:relative;z-index:1;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .find{background:rgba(255,255,255,.07);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:6px}
-  .find .who{font-family:var(--mono);font-size:12px;color:#C9B8FF}
-  .find .big{font-family:var(--display);font-weight:600;font-size:30px;color:var(--fc);line-height:1}
-  .find .what{font-size:13.5px;color:#CFC6EC}
-  .find .sub{font-family:var(--mono);font-size:11.5px;color:#A99BD8}
-  .takeaway{position:relative;z-index:1;margin-top:24px;padding:18px 20px;background:rgba(15,176,163,.12);border-left:3px solid var(--teal);border-radius:8px;font-size:15px;color:#E7F8F5}
-  .fyp-tags{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-  .fyp-tags .tag{font-family:var(--mono);font-size:11.5px;color:#CFC6EC;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:5px 10px}
-  .fyp-note{position:relative;z-index:1;margin-top:22px;font-size:13px;color:#A99BD8}
-  .fyp-table-wrap{position:relative;z-index:1;overflow-x:auto;margin-top:4px}
-  .fyp-table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:560px}
-  .fyp-table th,.fyp-table td{text-align:left;padding:11px 12px;border-bottom:1px solid rgba(255,255,255,.12)}
-  .fyp-table th{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:#A99BD8;font-weight:500}
-  .fyp-table td{color:#D9CFF2}
-  .fyp-table td.model{font-weight:600;color:#fff}
-  .fyp-table .num{font-family:var(--mono)}
-  .fyp-table .best{color:#5AE0D2;font-weight:600}
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{background:#fff;border:1px solid var(--line);border-radius:13px;padding:24px;display:flex;flex-direction:column;min-height:325px;transition:.2s}
+.project:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(16,42,67,.08);border-color:#C5D4DF}
+.proj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:14px}
+.proj-type{font:500 10.5px var(--mono);letter-spacing:.055em;text-transform:uppercase;color:var(--teal);background:#EAF5F4;border:1px solid #D5EAE8;padding:5px 7px;border-radius:4px}
+.proj-date{font-size:11.5px;color:#8695A4;text-align:right}
+.project h3{font:700 19px/1.3 var(--display);color:var(--navy);margin-bottom:10px;letter-spacing:-.01em}
+.project p{font-size:14px;color:#52687A;margin-bottom:14px}
+.project .impact{font-size:13px;color:#324A5F;background:#F4F8FA;border-left:3px solid var(--blue);padding:9px 11px;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto}
+.tags span{font-size:11.5px;color:#536A7C;border:1px solid var(--line);border-radius:4px;padding:4px 7px;background:#FAFBFC}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.links a{font-size:11.5px;font-weight:700;color:var(--blue);border:1px solid #C8D8E5;padding:7px 9px;border-radius:5px;background:#fff}
+.links a:hover{background:#EEF5FA}
 
-  /* ---------- PROJECTS ---------- */
-  .proj{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:grid;grid-template-columns:300px 1fr;margin-bottom:22px;transition:transform .25s,box-shadow .25s}
-  .proj:hover{transform:translateY(-4px);box-shadow:0 22px 50px -28px var(--pc)}
-  .proj-vis{position:relative;min-height:230px;background:var(--pvbg);display:flex;align-items:center;justify-content:center;padding:14px}
-  .proj-vis svg{position:relative;width:100%;height:100%;max-width:100%;max-height:100%}
-  .proj-vis .badge{position:absolute;top:14px;left:14px;font-family:var(--mono);font-size:11px;color:#fff;background:rgba(0,0,0,.18);border:1px solid rgba(255,255,255,.3);padding:4px 9px;border-radius:30px;letter-spacing:.04em;z-index:2}
-  .proj-body{padding:28px 30px}
-  .proj-meta{display:flex;align-items:center;gap:12px;margin-bottom:9px}
-  .proj-kpi{font-family:var(--mono);font-size:12.5px;color:var(--pc);font-weight:600;background:var(--pc-bg);padding:4px 10px;border-radius:30px}
-  .proj-date{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:auto}
-  .proj h3{font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:-.01em;margin-bottom:10px}
-  .proj p{color:var(--ink-soft);font-size:15px;margin-bottom:16px}
-  .proj-tags{display:flex;flex-wrap:wrap;gap:7px}
-  .tag{font-family:var(--mono);font-size:11.5px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:4px 9px}
-  .proj-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:17px}
-  .proj-link{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--pc);background:var(--pc-bg);border:1px solid transparent;border-radius:7px;padding:8px 12px;transition:.2s}
-  .proj-link:hover{transform:translateY(-2px);border-color:var(--pc)}
+/* Experience */
+.timeline{background:#fff;border:1px solid var(--line);border-radius:14px;padding:30px}
+.exp-top{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;margin-bottom:18px}
+.exp-title{font:700 20px var(--display);color:var(--navy)}
+.exp-org{font-size:14px;font-weight:600;color:var(--teal);margin-top:2px}
+.exp-date{font:500 11.5px var(--mono);color:var(--muted);white-space:nowrap;padding-top:4px}
+.timeline ul{padding-left:19px;display:grid;gap:9px}
+.timeline li{font-size:14.5px;color:#4C6274;padding-left:3px}
 
-  /* ---------- EXPERIENCE / EDUCATION ---------- */
-  .entry{border-left:2px solid var(--line);padding:0 0 30px 26px;position:relative}
-  .entry:last-child{padding-bottom:0}
-  .entry::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:linear-gradient(120deg,var(--coral),var(--amber));border:2px solid var(--bg)}
-  .entry .role{font-family:var(--display);font-weight:600;font-size:18px}
-  .entry .org{color:var(--coral);font-weight:600;font-size:15px}
-  .entry .when{font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:4px 0 12px}
-  .entry ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-  .entry li{position:relative;padding-left:20px;color:var(--ink-soft);font-size:15px}
-  .entry li::before{content:"▸";position:absolute;left:0;color:var(--coral);font-weight:700}
-  .edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .edu-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px;border-left:4px solid var(--ec)}
-  .edu-card .deg{font-family:var(--display);font-weight:600;font-size:16px;line-height:1.3}
-  .edu-card .inst{color:var(--ink-soft);font-size:14px;margin:5px 0 11px}
-  .edu-card .facts{font-family:var(--mono);font-size:12.5px;color:var(--ec);font-weight:500}
+/* Education & credentials */
+.edu-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.edu-card,.achievement-card{background:#fff;border:1px solid var(--line);border-radius:13px;padding:24px}
+.edu-card h3,.achievement-card h3{font:700 18px var(--display);color:var(--navy)}
+.edu-card .inst{font-size:14px;color:var(--blue);font-weight:600;margin:4px 0 8px}
+.edu-card .date{font:500 11px var(--mono);color:var(--muted)}
+.edu-card .facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.edu-card .facts span{background:#F2F6F9;border:1px solid var(--line);padding:6px 9px;border-radius:5px;font-size:12.5px;color:#40576B}
+.achievement-card{background:linear-gradient(145deg,#FFFFFF,#F7FAFC)}
+.achievement-card .award-line{padding:12px 0;border-bottom:1px solid var(--line)}
+.achievement-card .award-line:last-child{border-bottom:0;padding-bottom:0}
+.achievement-card b{display:block;font:700 15px var(--display);color:var(--navy)}
+.achievement-card span{font-size:12.5px;color:var(--muted)}
+.foundation{margin-top:18px}
 
-  /* ---------- CONTACT ---------- */
-  .contact{background:linear-gradient(130deg,var(--indigo),var(--violet) 55%,var(--coral));border-radius:22px;padding:58px 46px;text-align:center;position:relative;overflow:hidden}
-  .contact::before{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.25),transparent 70%);top:-100px;left:-60px}
-  .contact h2{position:relative;font-family:var(--display);font-weight:600;font-size:clamp(28px,4vw,40px);letter-spacing:-.01em;color:#fff}
-  .contact p{position:relative;color:rgba(255,255,255,.9);max-width:500px;margin:14px auto 30px}
-  .contact-links{position:relative;display:flex;flex-wrap:wrap;gap:13px;justify-content:center}
-  .clink{font-family:var(--mono);font-size:13.5px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.12);border-radius:8px;padding:12px 19px;color:#fff;transition:.2s}
-  .clink:hover{background:#fff;color:var(--indigo);transform:translateY(-2px)}
+.credentials{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.cred{background:#fff;border:1px solid var(--line);border-radius:10px;padding:17px 18px;display:flex;gap:13px;align-items:flex-start}
+.cred-mark{width:34px;height:34px;flex:0 0 34px;border-radius:8px;background:#EAF2F8;color:var(--blue);display:grid;place-items:center;font:700 11px var(--mono)}
+.cred h3{font:700 14px/1.35 var(--display);color:var(--navy)}
+.cred p{font-size:11.5px;color:var(--muted);margin-top:3px}
 
-  footer{padding:34px 0 46px;text-align:center}
-  footer .small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+/* Contact */
+.contact{background:var(--navy);border-radius:16px;padding:42px 38px;color:white;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.contact h2{font:700 clamp(26px,3vw,34px) var(--display)}
+.contact p{color:#D1E0E8;max-width:670px;margin-top:9px;font-size:14.5px}
+.contact-actions{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end}
+.contact-actions a{white-space:nowrap;background:white;color:var(--navy);font-size:12.5px;font-weight:700;padding:10px 13px;border-radius:6px}
+footer{padding:28px 0 38px;text-align:center;font:500 11px var(--mono);color:#7C8E9E}
 
-  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-  .reveal.in{opacity:1;transform:none}
+.reveal{opacity:0;transform:translateY(12px);transition:.55s ease}
+.reveal.in{opacity:1;transform:none}
 
-  @media(max-width:820px){
-    .nav-links{display:none}
-    .menu-btn{display:block}
-    .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--surface);border-bottom:1px solid var(--line);padding:18px 28px;gap:18px}
-    .ribbon-grid{grid-template-columns:1fr 1fr}
-    .metric:nth-child(2){border-right:none}
-    .metric{border-bottom:1px solid var(--line)}
-    .skills-grid{grid-template-columns:1fr}
-    .approach{grid-template-columns:1fr}
-    .findings{grid-template-columns:1fr}
-    .proj{grid-template-columns:1fr}
-    .proj-vis{min-height:160px}
-    .edu-grid{grid-template-columns:1fr}
-    .fyp-card{padding:30px 24px}
-    .contact{padding:42px 22px}
-  }
-  @media(prefers-reduced-motion:reduce){
-    *{animation:none!important}
-    .reveal{opacity:1;transform:none;transition:none}
-    html{scroll-behavior:auto}
-  }
+@media(max-width:900px){
+  .nav-links{display:none}.menu-btn{display:block}
+  .nav-links.open{display:flex;position:absolute;top:70px;left:0;right:0;background:white;border-bottom:1px solid var(--line);padding:20px 28px;flex-direction:column;align-items:flex-start;gap:16px}
+  .hero-grid,.about-grid,.edu-grid{grid-template-columns:1fr}
+  .profile-card{max-width:560px}
+  .research-stats{grid-template-columns:repeat(3,1fr)}
+  .metric-grid{grid-template-columns:repeat(2,1fr)}
+  .projects,.cap-grid,.credentials{grid-template-columns:1fr}
+  .contact{flex-direction:column;align-items:flex-start}.contact-actions{justify-content:flex-start}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px}.hero-grid{padding:68px 0 58px;gap:34px}
+  section{padding:62px 0}.research-top,.research-body{padding-left:22px;padding-right:22px}
+  .research-stats{grid-template-columns:1fr 1fr}.rstat:last-child{grid-column:1/-1}
+  .metric-grid{grid-template-columns:1fr}.project{min-height:auto}.exp-top{flex-direction:column;gap:6px}
+  .contact{padding:30px 24px}
+}
+@media(prefers-reduced-motion:reduce){*.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
-<style id="ai-llm-theme">
-  :root{
-    --ink:#EAF6FF;
-    --ink-soft:#A9BED2;
-    --bg:#050713;
-    --surface:#0B1120;
-    --surface-2:#10182B;
-    --line:#1C2A43;
-    --indigo:#7A6CFF;
-    --teal:#2AF3D1;
-    --coral:#FF7798;
-    --amber:#FFC85A;
-    --violet:#B56EFF;
-    --muted:#7F93AA;
-    --maxw:1120px;
-  }
-
-  html{color-scheme:dark}
-  body{
-    position:relative;
-    color:var(--ink);
-    background:
-      radial-gradient(circle at 82% 6%,rgba(122,108,255,.18),transparent 28%),
-      radial-gradient(circle at 14% 32%,rgba(42,243,209,.08),transparent 24%),
-      radial-gradient(circle at 78% 76%,rgba(181,110,255,.08),transparent 26%),
-      var(--bg);
-  }
-  body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:0;
-    opacity:.38;
-    background-image:
-      linear-gradient(rgba(93,130,170,.06) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(93,130,170,.06) 1px,transparent 1px),
-      radial-gradient(circle at center,rgba(42,243,209,.15) 1px,transparent 1.5px);
-    background-size:44px 44px,44px 44px,88px 88px;
-    -webkit-mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.7) 45%,transparent 100%);
-    mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.7) 45%,transparent 100%);
-  }
-  body > *{position:relative;z-index:1}
-  ::selection{background:rgba(42,243,209,.28);color:#fff}
-
-  header.nav{
-    background:rgba(5,7,19,.74);
-    border-bottom:1px solid rgba(90,126,165,.2);
-    box-shadow:0 10px 35px rgba(0,0,0,.22);
-  }
-  .brand{color:#DFF9FF;text-shadow:0 0 18px rgba(42,243,209,.2)}
-  .brand .dot{background:linear-gradient(90deg,var(--teal),#6FD8FF,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .nav-links a{color:#A9BED2}
-  .nav-links a:hover{color:var(--teal);text-shadow:0 0 14px rgba(42,243,209,.35)}
-  .nav-cta{
-    color:#051118;
-    background:linear-gradient(120deg,var(--teal),#6FD8FF);
-    box-shadow:0 0 0 1px rgba(42,243,209,.16),0 10px 30px -12px rgba(42,243,209,.75);
-  }
-  .nav-cta:hover{box-shadow:0 0 22px rgba(42,243,209,.24),0 14px 34px -12px rgba(42,243,209,.85)}
-  .menu-btn{color:var(--ink)}
-
-  .hero{
-    isolation:isolate;
-    background:linear-gradient(180deg,rgba(7,11,25,.4),rgba(5,7,19,.12));
-    border-bottom:1px solid rgba(90,126,165,.2);
-  }
-  .hero::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:0;
-    pointer-events:none;
-    background:
-      linear-gradient(rgba(42,243,209,.055) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(42,243,209,.055) 1px,transparent 1px);
-    background-size:34px 34px;
-    -webkit-mask-image:radial-gradient(circle at 78% 45%,#000 0%,rgba(0,0,0,.9) 28%,transparent 65%);
-    mask-image:radial-gradient(circle at 78% 45%,#000 0%,rgba(0,0,0,.9) 28%,transparent 65%);
-  }
-  .hero-inner{padding:96px 0 78px;min-height:540px;display:flex;flex-direction:column;justify-content:center}
-  .hero-inner::after{
-    content:"AI";
-    position:absolute;
-    right:4%;
-    top:50%;
-    width:300px;
-    height:300px;
-    transform:translateY(-50%);
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    border:1px solid rgba(42,243,209,.28);
-    color:rgba(234,246,255,.88);
-    font:600 72px/1 var(--mono);
-    letter-spacing:.08em;
-    text-shadow:0 0 26px rgba(42,243,209,.55);
-    box-shadow:
-      0 0 0 34px rgba(122,108,255,.045),
-      0 0 0 70px rgba(42,243,209,.025),
-      inset 0 0 50px rgba(42,243,209,.06),
-      0 0 65px rgba(122,108,255,.14);
-    background:
-      radial-gradient(circle at center,rgba(42,243,209,.08),transparent 52%),
-      conic-gradient(from 0deg,rgba(42,243,209,.18),transparent 14%,rgba(181,110,255,.2) 28%,transparent 43%,rgba(111,216,255,.2) 58%,transparent 74%,rgba(42,243,209,.18));
-    animation:aiFloat 8s ease-in-out infinite;
-    z-index:-1;
-  }
-  @keyframes aiFloat{0%,100%{transform:translateY(-50%) rotate(-2deg)}50%{transform:translateY(calc(-50% - 12px)) rotate(2deg)}}
-  .blob{filter:blur(100px);opacity:.26;mix-blend-mode:screen}
-  .blob.b1{background:radial-gradient(circle,#7A6CFF,transparent 70%)}
-  .blob.b2{background:radial-gradient(circle,#2AF3D1,transparent 70%)}
-  .blob.b3{background:radial-gradient(circle,#B56EFF,transparent 70%)}
-  .eyebrow{
-    color:#9EFBEA;
-    background:rgba(42,243,209,.06);
-    border:1px solid rgba(42,243,209,.2);
-    box-shadow:inset 0 0 22px rgba(42,243,209,.025),0 0 24px rgba(42,243,209,.045);
-  }
-  h1{color:#F6FBFF;text-shadow:0 18px 60px rgba(0,0,0,.45)}
-  h1 .grad{background:linear-gradient(105deg,var(--teal) 4%,#7DDCFF 38%,var(--indigo) 67%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px rgba(122,108,255,.18))}
-  .lede{color:#B7C9D8;max-width:650px}
-  .btn-solid{color:#041014;background:linear-gradient(120deg,var(--teal),#71D9FF);box-shadow:0 0 28px rgba(42,243,209,.16),0 14px 32px -18px rgba(42,243,209,.95)}
-  .btn-solid:hover{box-shadow:0 0 34px rgba(42,243,209,.24),0 18px 36px -18px rgba(42,243,209,1)}
-  .btn-ghost{background:rgba(10,16,31,.72);color:#DDF5FF;border-color:rgba(118,153,189,.28)}
-  .btn-ghost:hover{border-color:var(--teal);color:var(--teal);box-shadow:0 0 22px rgba(42,243,209,.08)}
-
-  .ribbon{background:rgba(7,11,24,.72);border-bottom:1px solid rgba(90,126,165,.2)}
-  .metric{
-    background:linear-gradient(180deg,rgba(15,23,42,.92),rgba(9,14,28,.92));
-    border-right-color:rgba(90,126,165,.18);
-  }
-  .metric::before{box-shadow:0 0 16px var(--mc)}
-  .metric .lbl{color:#8297AD}
-  .metric .num .unit{color:#7C91A7}
-
-  section{position:relative}
-  .sec-title{color:#EEF8FF}
-  .sec-num{color:#051016;box-shadow:0 0 18px color-mix(in srgb,var(--sc) 35%,transparent)}
-  .sec-line{opacity:.62}
-  .about p{color:#B1C3D4}
-  .about .hl{color:var(--teal);text-shadow:0 0 16px rgba(42,243,209,.18)}
-
-  .skill-block{
-    position:relative;
-    overflow:hidden;
-    background:linear-gradient(160deg,rgba(16,24,43,.94),rgba(8,14,27,.94));
-    border-color:rgba(87,124,162,.22);
-    box-shadow:0 18px 44px -30px rgba(0,0,0,.9);
-  }
-  .skill-block::after{
-    content:"";
-    position:absolute;
-    width:150px;height:150px;border-radius:50%;
-    right:-70px;top:-85px;
-    background:radial-gradient(circle,var(--kc),transparent 68%);
-    opacity:.12;
-    pointer-events:none;
-  }
-  .skill-block .cat{color:color-mix(in srgb,var(--kc) 78%,white)}
-  .skill-block .chip{
-    color:#DCEAF5;
-    background:rgba(255,255,255,.045);
-    border-color:rgba(122,154,188,.17);
-  }
-  .skill-block .chip:hover{border-color:color-mix(in srgb,var(--kc) 55%,transparent);box-shadow:0 0 18px color-mix(in srgb,var(--kc) 12%,transparent)}
-
-  .fyp-card{
-    background:
-      radial-gradient(circle at 90% 10%,rgba(42,243,209,.13),transparent 25%),
-      radial-gradient(circle at 4% 100%,rgba(181,110,255,.15),transparent 28%),
-      linear-gradient(135deg,#0B1122,#11172C 52%,#121026);
-    border:1px solid rgba(106,142,180,.24);
-    box-shadow:0 30px 80px -45px rgba(42,243,209,.25),inset 0 1px 0 rgba(255,255,255,.035);
-  }
-  .fyp-card::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    opacity:.22;
-    pointer-events:none;
-    background-image:
-      linear-gradient(rgba(42,243,209,.055) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(42,243,209,.055) 1px,transparent 1px);
-    background-size:38px 38px;
-    -webkit-mask-image:linear-gradient(90deg,transparent,black 45%,black);
-    mask-image:linear-gradient(90deg,transparent,black 45%,black);
-  }
-  .fyp-card::after{background:radial-gradient(circle,rgba(42,243,209,.32),transparent 70%);opacity:.55}
-  .fyp-tag{color:#A8FFF0;border-color:rgba(42,243,209,.28);background:rgba(42,243,209,.05)}
-  .fyp-card .intro{color:#BCCBE0}
-  .fyp-setup .s{background:rgba(255,255,255,.045);border-color:rgba(123,153,188,.2);color:#D7E7F5}
-  .fyp-block-title{color:#8CA5BE}
-  .ap,.find{background:rgba(255,255,255,.035);border-color:rgba(117,150,184,.18)}
-  .ap .d,.find .what{color:#B3C4D8}
-  .takeaway{background:rgba(42,243,209,.07);color:#DDFBF5;box-shadow:inset 0 0 25px rgba(42,243,209,.02)}
-  .fyp-tags .tag{color:#BCD0E0;border-color:rgba(126,157,188,.24);background:rgba(255,255,255,.025)}
-  .fyp-note{color:#8198B1}
-  .fyp-table th,.fyp-table td{border-bottom-color:rgba(122,153,184,.16)}
-  .fyp-table th{color:#8EA5BD}
-  .fyp-table td{color:#BDCCE0}
-
-  .proj{
-    background:linear-gradient(155deg,rgba(15,23,42,.96),rgba(8,13,27,.96));
-    border-color:rgba(91,128,166,.22);
-    box-shadow:0 18px 48px -38px rgba(0,0,0,.95);
-  }
-  .proj:hover{box-shadow:0 28px 70px -40px color-mix(in srgb,var(--pc) 45%,black),0 0 0 1px color-mix(in srgb,var(--pc) 28%,transparent)}
-  .proj-vis{border-right:1px solid rgba(102,136,170,.16)}
-  .proj-vis::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    background-image:
-      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:24px 24px;
-    -webkit-mask-image:linear-gradient(to right,rgba(0,0,0,.75),transparent);
-    mask-image:linear-gradient(to right,rgba(0,0,0,.75),transparent);
-  }
-  .proj-vis svg,.proj-vis .badge{z-index:2}
-  .proj-vis .badge{background:rgba(2,8,17,.48);border-color:rgba(255,255,255,.26);backdrop-filter:blur(8px)}
-  .proj h3{color:#F1F8FF}
-  .proj p{color:#AFC1D2}
-  .proj-kpi{color:color-mix(in srgb,var(--pc) 76%,white);background:color-mix(in srgb,var(--pc) 11%,transparent);border:1px solid color-mix(in srgb,var(--pc) 20%,transparent)}
-  .proj-date{color:#8296AA}
-  .tag{color:#9FB3C6;border-color:rgba(108,141,174,.22);background:rgba(255,255,255,.025)}
-  .proj-link{color:color-mix(in srgb,var(--pc) 76%,white);background:color-mix(in srgb,var(--pc) 9%,transparent);border-color:color-mix(in srgb,var(--pc) 17%,transparent)}
-
-  .entry{border-left-color:rgba(99,136,172,.25)}
-  .entry::before{background:linear-gradient(120deg,var(--teal),var(--violet));border-color:var(--bg);box-shadow:0 0 14px rgba(42,243,209,.32)}
-  .entry .role{color:#EFF8FF}
-  .entry .org{color:#76EEDD}
-  .entry .when{color:#8095AA}
-  .entry li{color:#AEC0D1}
-  .entry li::before{color:var(--teal)}
-  .edu-card{
-    background:linear-gradient(155deg,rgba(15,23,42,.94),rgba(8,14,27,.94));
-    border-color:rgba(89,126,162,.22);
-    box-shadow:0 16px 42px -34px rgba(0,0,0,.95);
-  }
-  .edu-card .deg{color:#EEF8FF}
-  .edu-card .inst{color:#AABCCE}
-  .edu-card .facts{color:color-mix(in srgb,var(--ec) 74%,white)}
-
-  .contact{
-    background:
-      radial-gradient(circle at 12% 15%,rgba(42,243,209,.16),transparent 28%),
-      radial-gradient(circle at 90% 84%,rgba(181,110,255,.2),transparent 30%),
-      linear-gradient(135deg,#0B1324,#11172C 60%,#17112B);
-    border:1px solid rgba(103,141,177,.28);
-    box-shadow:0 28px 80px -48px rgba(42,243,209,.28),inset 0 1px 0 rgba(255,255,255,.04);
-  }
-  .contact::before{background:radial-gradient(circle,rgba(42,243,209,.22),transparent 70%)}
-  .contact::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    opacity:.25;
-    background-image:
-      linear-gradient(rgba(42,243,209,.055) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(42,243,209,.055) 1px,transparent 1px);
-    background-size:34px 34px;
-    -webkit-mask-image:radial-gradient(circle at center,#000,transparent 76%);
-    mask-image:radial-gradient(circle at center,#000,transparent 76%);
-  }
-  .contact h2,.contact p,.contact-links{z-index:2}
-  .contact p{color:#C2D1DE}
-  .clink{background:rgba(7,13,26,.5);border-color:rgba(144,177,208,.28);color:#E5F7FF;backdrop-filter:blur(10px)}
-  .clink:hover{background:rgba(42,243,209,.12);color:var(--teal);border-color:rgba(42,243,209,.5);box-shadow:0 0 22px rgba(42,243,209,.12)}
-  footer .small{color:#72879C}
-
-  @media(max-width:980px){
-    .hero-inner::after{right:-80px;opacity:.48}
-  }
-  @media(max-width:820px){
-    .nav-links.open{background:rgba(8,13,27,.98);border-bottom-color:rgba(90,126,165,.25)}
-    .hero-inner{min-height:auto;padding:78px 0 66px}
-    .hero-inner::after{display:none}
-    .proj-vis{border-right:none;border-bottom:1px solid rgba(102,136,170,.16)}
-  }
-</style>
-
 </head>
 <body>
-
 <header class="nav">
   <div class="wrap nav-inner">
-    <a href="#top" class="brand">tharraniah<span class="dot">.</span>ai</a>
+    <a class="brand" href="#top">Tharraniah<span>.</span></a>
     <nav class="nav-links" id="navlinks">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#research">Research</a>
-      <a href="#work">Projects</a>
-      <a href="#experience">Experience</a>
-      <a class="nav-cta" href="Tharraniah_Resume.pdf">Résumé ↗</a>
+      <a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#research">Research</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#credentials">Credentials</a>
+      <a class="cta" href="#contact">Contact</a>
     </nav>
-    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">menu</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">Menu</button>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="top" style="padding:0">
-  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
-  <div class="wrap hero-inner">
-    <span class="eyebrow"><span class="pulse"></span>Research · Analytics · AI · LLM Evaluation · NLP</span>
-    <h1>Tharraniah<br><span class="grad">Tamilwanan.</span></h1>
-    <p class="lede">Data Science graduate turning research, review, and operational data into clear, decision-ready insights — across analytics, NLP, machine learning, dashboards, and web applications.</p>
-    <div class="hero-actions">
-      <a class="btn btn-solid" href="#work">View projects</a>
-      <a class="btn btn-ghost" href="mailto:tharraniah18@gmail.com">Get in touch</a>
+<main>
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Research · Analytics · Quantitative Analysis · AI · LLM Evaluation · NLP</span>
+      <h1>Tharraniah Tamilwanan</h1>
+      <div class="role">Data Science Graduate | Research · Analytics · AI</div>
+      <p class="lede">Fresh Data Science graduate with hands-on experience in quantitative and qualitative research, data analytics, statistical interpretation, business intelligence, NLP, and AI evaluation.</p>
+      <p class="hero-note">Interested in graduate and entry-level opportunities across <strong>research, insights, data analytics, quantitative analysis, business intelligence, and analytical roles involving mathematics and data</strong>.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#projects">View selected work</a>
+        <a class="btn btn-outline" href="https://www.linkedin.com/in/tharraniah-t-121938272" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn btn-outline" href="mailto:tharraniah18@gmail.com">Email me</a>
+      </div>
     </div>
+    <aside class="profile-card" aria-label="Profile highlights">
+      <h2>Profile snapshot</h2>
+      <div class="snapshot">
+        <div class="snap"><span class="label">Degree</span><span class="value">BCS (Hons.)<br>Data Science</span></div>
+        <div class="snap"><span class="label">CGPA</span><span class="value">3.69</span></div>
+        <div class="snap"><span class="label">Academic recognition</span><span class="value">Dean's List ×4</span></div>
+        <div class="snap award"><span class="label">FYP achievement</span><span class="value">1st Runner-Up<br>Best Project — Data Science</span></div>
+      </div>
+    </aside>
   </div>
 </section>
 
-<!-- METRIC RIBBON -->
-<div class="ribbon">
-  <div class="wrap" style="padding:0">
-    <div class="ribbon-grid">
-      <div class="metric" style="--mc:var(--indigo)"><div class="num">3.63<span class="unit">CGPA</span></div><div class="lbl">BCS (Hons.) Data Science, MMU</div></div>
-      <div class="metric" style="--mc:var(--teal)"><div class="num">17<span class="unit">seats</span></div><div class="lbl">Sabah constituencies of election data organised</div></div>
-      <div class="metric" style="--mc:var(--coral)"><div class="num">82.26<span class="unit">%</span></div><div class="lbl">Best ABSA model accuracy with tuned RoBERTa</div></div>
-      <div class="metric" style="--mc:var(--amber)"><div class="num">817<span class="unit">Q</span></div><div class="lbl">Questions in LLM factuality benchmark</div></div>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
 <section id="about">
   <div class="wrap">
-    <div class="sec-head reveal" style="--sc:var(--indigo)"><span class="sec-num">01</span><span class="sec-title">About</span><span class="sec-line"></span></div>
-    <div class="about reveal">
-      <p>I'm a final-year Bachelor of Computer Science (Hons.) Data Science student at Multimedia University, graduating in July 2026. During my internship at the <span class="hl">Merdeka Center for Opinion Research</span>, I worked with real survey and election data — cleaning, validating, and analysing it to support evidence-based research and reporting.</p>
-      <p>I like the part of analytics where messy data becomes a clear answer someone can act on. My work spans research analytics, dashboards, NLP and aspect-based sentiment analysis, statistical modelling, machine learning, and secure web applications — from Power BI reporting to transformer-based review analysis and LLM reliability evaluation.</p>
+    <div class="section-head"><div><div class="section-kicker">01 · Profile</div><h2 class="section-title">About me</h2></div><div class="section-line"></div></div>
+    <div class="about-grid">
+      <div class="about-copy reveal">
+        <p>I am a <strong>Data Science graduate from Multimedia University</strong> with a strong interest in research, analytics, and evidence-based decision-making. My experience combines quantitative and qualitative research, survey-data analysis, statistical reporting, data visualisation, and the interpretation of complex information into clear insights.</p>
+        <p>During my internship at the <strong>Merdeka Center for Opinion Research</strong>, I supported public-opinion and social-research work through data cleaning, validation, analysis, Monitoring &amp; Evaluation reporting, Focus Group Discussion support, and preparation of research outputs.</p>
+        <p>My academic portfolio also includes work in <strong>LLM factuality evaluation, NLP, sentiment analysis, business intelligence, urban mobility analytics, and computer vision</strong>. I am comfortable working with technical tools, but I am especially motivated by roles where research, analysis, mathematics, and communication are used to support better decisions.</p>
+      </div>
+      <aside class="target-card reveal">
+        <h3>Career direction</h3>
+        <p>Seeking opportunities where analytical thinking and research matter as much as technical execution.</p>
+        <div class="target-list"><span>Research Analyst</span><span>Data / Insights Analyst</span><span>Quantitative Analyst</span><span>Business Intelligence</span><span>Market / Social Research</span><span>M&amp;E / Evaluation</span><span>Graduate Analyst</span><span>AI-informed Analytics</span></div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section id="skills" style="padding-top:0">
+<section id="capabilities" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal" style="--sc:var(--teal)"><span class="sec-num">02</span><span class="sec-title">Skills</span><span class="sec-line"></span></div>
-    <div class="skills-grid">
-      <div class="skill-block reveal" style="--kc:var(--indigo);--kc-bg:rgba(91,83,232,.1);--kc-tx:#4640B5">
-        <div class="cat">Programming, Web &amp; Databases</div>
-        <div class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">C++</span><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML &amp; CSS</span><span class="chip">JavaScript</span></div>
-      </div>
-      <div class="skill-block reveal" style="--kc:var(--teal);--kc-bg:rgba(15,176,163,.12);--kc-tx:#0A7D74">
-        <div class="cat">Data Analysis, NLP &amp; ML</div>
-        <div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">scikit-learn</span><span class="chip">NLP</span><span class="chip">ABSA</span><span class="chip">Transformers</span><span class="chip">RoBERTa</span><span class="chip">DistilBERT</span></div>
-      </div>
-      <div class="skill-block reveal" style="--kc:var(--coral);--kc-bg:rgba(251,106,91,.12);--kc-tx:#D43E2E">
-        <div class="cat">Research &amp; Analytics</div>
-        <div class="chips"><span class="chip">Data Cleaning</span><span class="chip">Data Validation</span><span class="chip">Survey Analytics</span><span class="chip">Sentiment Analysis</span><span class="chip">Opinion Mining</span><span class="chip">Statistical Analysis</span><span class="chip">Research Methodology</span></div>
-      </div>
-      <div class="skill-block reveal" style="--kc:var(--violet);--kc-bg:rgba(154,80,230,.12);--kc-tx:#7E33C9">
-        <div class="cat">Visualization, Apps &amp; Reporting</div>
-        <div class="chips"><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Matplotlib</span><span class="chip">Streamlit</span><span class="chip">Hugging Face Spaces</span><span class="chip">Excel</span><span class="chip">Google Sheets</span><span class="chip">Report Writing</span></div>
-      </div>
+    <div class="section-head"><div><div class="section-kicker">02 · Capabilities</div><h2 class="section-title">Research, analytics & technical foundation</h2></div><div class="section-line"></div></div>
+    <div class="cap-grid">
+      <div class="cap reveal" style="--cap:var(--teal)"><h3>Research &amp; Insight</h3><div class="chips"><span class="chip">Quantitative Research</span><span class="chip">Qualitative Research</span><span class="chip">Survey Analysis</span><span class="chip">Focus Group Discussions</span><span class="chip">Monitoring &amp; Evaluation</span><span class="chip">Research Methodology</span><span class="chip">Report Writing</span><span class="chip">Data Validation</span></div></div>
+      <div class="cap reveal" style="--cap:var(--blue)"><h3>Analytics &amp; Quantitative Work</h3><div class="chips"><span class="chip">Statistical Analysis</span><span class="chip">Data Analysis</span><span class="chip">Data Cleaning</span><span class="chip">Applied Mathematics</span><span class="chip">Data Visualization</span><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">SPSS</span><span class="chip">Excel / Google Sheets</span></div></div>
+      <div class="cap reveal" style="--cap:#576D8C"><h3>Data Science &amp; AI</h3><div class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">R</span><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">scikit-learn</span><span class="chip">NLP</span><span class="chip">LLM Evaluation</span><span class="chip">ABSA</span><span class="chip">Transformer Model Evaluation</span></div></div>
+      <div class="cap reveal" style="--cap:#7A6D55"><h3>Technical Skills</h3><div class="chips"><span class="chip">C++</span><span class="chip">PHP</span><span class="chip">MySQL</span><span class="chip">HTML &amp; CSS</span><span class="chip">JavaScript</span><span class="chip">D3.js</span><span class="chip">Streamlit</span><span class="chip">Hugging Face Spaces</span><span class="chip">LaTeX</span><span class="chip">Cisco Packet Tracer</span></div></div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED RESEARCH (FYP) -->
 <section id="research" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal" style="--sc:var(--violet)"><span class="sec-num">03</span><span class="sec-title">Featured research</span><span class="sec-line"></span></div>
-    <div class="fyp reveal">
-      <div class="fyp-card">
-        <span class="fyp-tag">★ Final Year Project · First-authored research paper</span>
+    <div class="section-head"><div><div class="section-kicker">03 · Featured Research</div><h2 class="section-title">Final Year Project — LLM factuality evaluation</h2></div><div class="section-line"></div></div>
+    <div class="research-card reveal">
+      <div class="research-top">
+        <div class="award-badge">★ 1st Runner-Up — Best Project (Data Science)</div>
         <h3>Comparative evaluation of factual reliability in large language models under paraphrased prompts</h3>
-        <p class="intro">As LLMs are increasingly used to answer real questions, knowing <em>how truthful</em> they are matters — and whether they stay truthful when the same question is worded differently. This study compares three leading models on a standardised benchmark, testing each question in both its original form and a manually validated paraphrase to measure robustness, not just raw accuracy.</p>
-
-        <div class="fyp-setup">
-          <span class="s"><b>3</b> models</span>
-          <span class="s"><b>817</b> questions</span>
-          <span class="s"><b>38</b> categories</span>
-          <span class="s"><b>2×</b> original + paraphrased</span>
-          <span class="s">Benchmark: <b>TruthfulQA</b></span>
+        <p>Evaluated whether leading large language models remain truthful and consistent when the same questions are reworded. The study used a standardised benchmark and assessed not only raw accuracy, but also hallucination, consistency, and sensitivity to paraphrasing.</p>
+      </div>
+      <div class="research-stats">
+        <div class="rstat"><b>817</b><span>TruthfulQA questions</span></div>
+        <div class="rstat"><b>38</b><span>question categories</span></div>
+        <div class="rstat"><b>3</b><span>LLMs evaluated</span></div>
+        <div class="rstat"><b>4</b><span>reliability metrics</span></div>
+        <div class="rstat"><b>2×</b><span>original + paraphrased prompts</span></div>
+      </div>
+      <div class="research-body">
+        <h4>Evaluation framework</h4>
+        <div class="metric-grid">
+          <div class="metric"><strong>Factual accuracy</strong><span>Whether answers matched the benchmark's correct reference set.</span></div>
+          <div class="metric"><strong>Hallucination rate</strong><span>How often confident answers were false or unsupported.</span></div>
+          <div class="metric"><strong>Consistency</strong><span>Whether answers remained stable after paraphrasing.</span></div>
+          <div class="metric"><strong>Paraphrase sensitivity</strong><span>How much model accuracy changed when wording changed.</span></div>
         </div>
-
-        <div class="fyp-block-title">Models evaluated</div>
-        <div class="fyp-setup">
-          <span class="s">ChatGPT-4o mini</span>
-          <span class="s">DeepSeek-V3.2</span>
-          <span class="s">Gemini 3 Flash</span>
-        </div>
-
-        <div class="fyp-block-title">Four metrics, not one</div>
-        <div class="approach">
-          <div class="ap" style="--apc:var(--teal)"><div class="t">Factual accuracy</div><div class="d">Share of answers that match the benchmark's correct reference set.</div></div>
-          <div class="ap" style="--apc:var(--coral)"><div class="t">Hallucination rate</div><div class="d">Share of confident answers that are false or unsupported.</div></div>
-          <div class="ap" style="--apc:var(--amber)"><div class="t">Consistency</div><div class="d">Whether a model gives the same answer to a question and its paraphrase.</div></div>
-          <div class="ap" style="--apc:#8FA2FF"><div class="t">Paraphrase sensitivity</div><div class="d">How much accuracy shifts when the wording changes — lower is better.</div></div>
-        </div>
-
-        <div class="fyp-block-title">Results</div>
-        <div class="fyp-table-wrap">
-          <table class="fyp-table">
-            <thead><tr><th>Model</th><th>Accuracy</th><th>Hallucination</th><th>Label consistency</th><th>Paraphrase sensitivity</th><th>Overall</th></tr></thead>
-            <tbody>
-              <tr><td class="model">ChatGPT-4o mini</td><td class="num">81.70%</td><td class="num">9.85%</td><td class="num best">90.33%</td><td class="num best">0.61 pp</td><td class="num best">#1 · 62.65</td></tr>
-              <tr><td class="model">Gemini 3 Flash</td><td class="num best">82.86%</td><td class="num best">7.53%</td><td class="num">87.27%</td><td class="num">1.22 pp</td><td class="num">#2 · 60.93</td></tr>
-              <tr><td class="model">DeepSeek-V3.2</td><td class="num">78.52%</td><td class="num">8.69%</td><td class="num">78.46%</td><td class="num">7.71 pp</td><td class="num">#3 · 56.59</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div class="takeaway">Gemini 3 Flash was the most accurate and least prone to hallucination — yet ChatGPT-4o mini ranked best overall because it stayed the most consistent and least affected by rewording. The takeaway: factual accuracy alone doesn't define a reliable model; robustness and consistency matter just as much.</div>
-
-        <div class="fyp-block-title">How it was evaluated</div>
-        <p class="intro" style="margin-top:0">An automated Python pipeline combined fuzzy lexical matching (RapidFuzz) and sentence-transformer semantic similarity (all-MiniLM-L6-v2) with rule-based labelling into Correct, Incorrect, and Uncertain — applied identically to every model and both prompt types.</p>
-
-        <div class="fyp-tags">
-          <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">RapidFuzz</span><span class="tag">SentenceTransformers</span><span class="tag">TruthfulQA</span><span class="tag">LLM Evaluation</span><span class="tag">Responsible AI</span>
-        </div>
-        <div class="fyp-note">First author · Faculty of Computing &amp; Informatics, MMU · full paper available on request.</div>
+        <h4>Results</h4>
+        <div class="result-table"><table><thead><tr><th>Model</th><th>Accuracy</th><th>Hallucination</th><th>Label consistency</th><th>Paraphrase sensitivity</th><th>Overall</th></tr></thead><tbody>
+          <tr><td>ChatGPT-4o mini</td><td>81.70%</td><td>9.85%</td><td>90.33%</td><td>0.61 pp</td><td>#1 · 62.65</td></tr>
+          <tr><td>Gemini 3 Flash</td><td>82.86%</td><td>7.53%</td><td>87.27%</td><td>1.22 pp</td><td>#2 · 60.93</td></tr>
+          <tr><td>DeepSeek-V3.2</td><td>78.52%</td><td>8.69%</td><td>78.46%</td><td>7.71 pp</td><td>#3 · 56.59</td></tr>
+        </tbody></table></div>
+        <div class="takeaway"><strong>Key finding:</strong> Gemini 3 Flash achieved the highest factual accuracy and lowest hallucination rate, while ChatGPT-4o mini ranked best overall because it was the most consistent and least sensitive to paraphrasing. The study shows that reliable AI evaluation should consider robustness and consistency alongside accuracy.</div>
+        <div class="research-tags"><span>Research Design</span><span>TruthfulQA</span><span>LLM Evaluation</span><span>NLP</span><span>Python</span><span>Pandas</span><span>RapidFuzz</span><span>SentenceTransformers</span><span>Responsible AI</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="work" style="padding-top:0">
+<section id="projects" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal" style="--sc:var(--coral)"><span class="sec-num">04</span><span class="sec-title">More projects</span><span class="sec-line"></span></div>
-
-
-    <!-- Aspect-Based Sentiment Analysis -->
-    <article class="proj reveal" style="--pc:var(--violet);--pc-bg:rgba(154,80,230,.12);--pvbg:linear-gradient(150deg,#342065,#8B42C7)">
-      <div class="proj-vis">
-        <span class="badge">NLP · ABSA</span>
-        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <g fill="rgba(255,255,255,.13)" stroke="rgba(255,255,255,.36)" stroke-width="1">
-            <rect x="32" y="42" width="236" height="136" rx="10"/>
-          </g>
-          <g font-family="monospace" font-size="10" fill="rgba(255,255,255,.82)">
-            <text x="48" y="65">usability</text><text x="48" y="91">security</text><text x="48" y="117">reliability</text><text x="48" y="143">cost</text>
-          </g>
-          <g>
-            <rect x="118" y="54" width="116" height="12" rx="6" fill="rgba(255,255,255,.18)"/><rect x="118" y="54" width="80" height="12" rx="6" fill="#5AE0D2"/>
-            <rect x="118" y="80" width="116" height="12" rx="6" fill="rgba(255,255,255,.18)"/><rect x="118" y="80" width="62" height="12" rx="6" fill="#FF8F83"/>
-            <rect x="118" y="106" width="116" height="12" rx="6" fill="rgba(255,255,255,.18)"/><rect x="118" y="106" width="73" height="12" rx="6" fill="#5AE0D2"/>
-            <rect x="118" y="132" width="116" height="12" rx="6" fill="rgba(255,255,255,.18)"/><rect x="118" y="132" width="91" height="12" rx="6" fill="#FF8F83"/>
-          </g>
-          <text x="150" y="166" text-anchor="middle" fill="#FFFFFF" font-family="monospace" font-size="13" font-weight="600">RoBERTa · 82.26%</text>
-        </svg>
-      </div>
-      <div class="proj-body">
-        <div class="proj-meta"><span class="proj-kpi">3,118 records · 6 apps</span><span class="proj-date">2026</span></div>
+    <div class="section-head"><div><div class="section-kicker">04 · Selected Work</div><h2 class="section-title">Projects</h2></div><div class="section-line"></div></div>
+    <p class="section-intro">A selection of academic work spanning research analytics, NLP, data visualisation, business intelligence, computer vision, and information systems.</p>
+    <div class="projects">
+      <article class="project reveal">
+        <div class="proj-head"><span class="proj-type">Group Project · NLP / ABSA</span><span class="proj-date">2026</span></div>
         <h3>Aspect-Based Sentiment Analysis of Social Networking App Reviews</h3>
-        <p>Analysed aspect-level opinions across nine software-quality categories, including usability, security, reliability, cost, and effectiveness. Compared traditional machine-learning, BiLSTM, and transformer approaches; tuned Sentiment RoBERTa achieved 82.26% accuracy and 0.820 macro F1. Added rule- and similarity-based opinion spam-risk detection and deployed an interactive Streamlit application.</p>
-        <div class="proj-tags"><span class="tag">Python</span><span class="tag">NLP &amp; ABSA</span><span class="tag">scikit-learn</span><span class="tag">BiLSTM</span><span class="tag">RoBERTa</span><span class="tag">Streamlit</span></div>
-        <div class="proj-links">
-          <a class="proj-link" href="https://vengga-cds6344-group9-absa-spam-detection.hf.space" target="_blank" rel="noopener">Live application ↗</a>
-          <a class="proj-link" href="https://github.com/Vengga/CDS6344_Group9_Project" target="_blank" rel="noopener">GitHub repository ↗</a>
-        </div>
-      </div>
-    </article>
+        <p>Contributed to a team project analysing aspect-level opinions across nine software-quality categories, including usability, security, reliability, cost, and effectiveness. Compared machine-learning, BiLSTM, and transformer approaches and incorporated opinion spam-risk assessment.</p>
+        <div class="impact"><strong>3,118 reviews · 6 apps.</strong> Tuned Sentiment RoBERTa achieved <strong>82.26% accuracy</strong> and <strong>0.820 macro F1</strong>.</div>
+        <div class="tags"><span>Research Analysis</span><span>NLP</span><span>Sentiment Analysis</span><span>RoBERTa</span><span>Python</span><span>Streamlit</span></div>
+        <div class="links"><a href="https://vengga-cds6344-group9-absa-spam-detection.hf.space" target="_blank" rel="noopener">Live application ↗</a><a href="https://github.com/Vengga/CDS6344_Group9_Project" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
 
-    <!-- Restaurant Listing and Review System -->
-    <article class="proj reveal" style="--pc:var(--amber);--pc-bg:rgba(244,161,38,.14);--pvbg:linear-gradient(150deg,#E67E22,#B84128)">
-      <div class="proj-vis">
-        <span class="badge">FULL-STACK WEB</span>
-        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <rect x="40" y="38" width="220" height="144" rx="11" fill="rgba(255,255,255,.12)" stroke="rgba(255,255,255,.4)"/>
-          <rect x="56" y="55" width="72" height="52" rx="6" fill="rgba(255,255,255,.22)"/>
-          <path d="M67 97 L86 76 L99 88 L114 69 L124 97 Z" fill="rgba(255,255,255,.72)"/>
-          <g fill="#FFFFFF" opacity=".92"><circle cx="148" cy="66" r="4"/><circle cx="160" cy="66" r="4"/><circle cx="172" cy="66" r="4"/><circle cx="184" cy="66" r="4"/><circle cx="196" cy="66" r="4"/></g>
-          <g stroke="rgba(255,255,255,.62)" stroke-width="4" stroke-linecap="round"><line x1="148" y1="86" x2="231" y2="86"/><line x1="148" y1="101" x2="218" y2="101"/></g>
-          <g fill="rgba(255,255,255,.18)"><rect x="56" y="126" width="176" height="13" rx="5"/><rect x="56" y="148" width="130" height="13" rx="5"/></g>
-          <text x="150" y="174" text-anchor="middle" fill="#FFFFFF" font-family="monospace" font-size="12" font-weight="600">SEARCH · FILTER · REVIEW CRUD</text>
-        </svg>
-      </div>
-      <div class="proj-body">
-        <div class="proj-meta"><span class="proj-kpi">6 restaurants · secure CRUD</span><span class="proj-date">2026</span></div>
+      <article class="project reveal">
+        <div class="proj-head"><span class="proj-type">Group Project · Data Visualisation</span><span class="proj-date">2026 · CDS6324 · SDG 11</span></div>
+        <h3>Walkable Melbourne — Interactive Pedestrian Mobility Dashboard</h3>
+        <p>Contributed to an interactive dashboard exploring long-term pedestrian mobility patterns across Melbourne. The work translated a large urban dataset into accessible visual insights for walkability and sustainable-city analysis.</p>
+        <div class="impact"><strong>888,425 hourly records · 60 sensors · 2009–2022.</strong> Eight modular visualisations, six slicers, KPI cards, linked filtering, map zoom/pan, tooltips, and an animated bar-chart race.</div>
+        <div class="tags"><span>Data Analytics</span><span>D3.js</span><span>JavaScript</span><span>Python</span><span>Pandas</span><span>Urban Analytics</span><span>SDG 11</span></div>
+        <div class="links"><a href="https://walkable-melbourne-dashboard.netlify.app" target="_blank" rel="noopener">Live dashboard ↗</a><a href="https://github.com/Vengga/walkable-melbournedashboard" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+
+      <article class="project reveal">
+        <div class="proj-head"><span class="proj-type">Business Intelligence</span><span class="proj-date">2025</span></div>
+        <h3>Sales Performance Dashboard — Power BI</h3>
+        <p>Developed an interactive Power BI dashboard to analyse retail sales performance through revenue, profit, orders, month-over-month trends, and product-category breakdowns.</p>
+        <div class="impact">Focused on transforming raw retail data into <strong>clear visual insights for decision-making and performance monitoring</strong>.</div>
+        <div class="tags"><span>Power BI</span><span>DAX</span><span>Data Analytics</span><span>Data Visualization</span><span>Data Modelling</span><span>Business Intelligence</span></div>
+      </article>
+
+      <article class="project reveal">
+        <div class="proj-head"><span class="proj-type">Group Project · Computer Vision</span><span class="proj-date">Nov 2025 – Jan 2026</span></div>
+        <h3>Handwritten Digit Recognition System</h3>
+        <p>Contributed to a classical computer-vision system for multi-digit recognition using Python, OpenCV, Streamlit, and MNIST, without deep learning.</p>
+        <div class="impact">Pipeline included <strong>Gaussian smoothing, Otsu thresholding, watershed segmentation, and template matching</strong> against MNIST templates.</div>
+        <div class="tags"><span>Computer Vision</span><span>OpenCV</span><span>MNIST</span><span>Image Processing</span><span>Python</span><span>Streamlit</span></div>
+        <div class="links"><a href="https://handwritten-digit-recognition-vip-yeqrv5jgg7v9k8rwbr29cn.streamlit.app" target="_blank" rel="noopener">Live application ↗</a></div>
+      </article>
+
+      <article class="project reveal">
+        <div class="proj-head"><span class="proj-type">Individual Project · Information System</span><span class="proj-date">2026</span></div>
         <h3>Restaurant Listing and Review System</h3>
-        <p>Built a responsive PHP/MySQL application for browsing restaurant details, searching by name, filtering by cuisine, sorting results, calculating average ratings, and managing customer reviews. Implemented JavaScript and PHP validation, PDO prepared statements, output escaping, duplicate-review prevention, safe ID handling, and POST-only review deletion.</p>
-        <div class="proj-tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">PDO</span><span class="tag">HTML &amp; CSS</span><span class="tag">JavaScript</span><span class="tag">Secure Web Development</span></div>
-      </div>
-    </article>
+        <p>Developed a responsive PHP/MySQL application for browsing restaurant details, searching by name, filtering by cuisine, sorting results, calculating average ratings, and managing customer reviews.</p>
+        <div class="impact">Implemented validation and secure database practices including <strong>PDO prepared statements, output escaping, duplicate-review prevention, and POST-only deletion</strong>.</div>
+        <div class="tags"><span>MySQL</span><span>SQL</span><span>PHP</span><span>Database Management</span><span>JavaScript</span><span>Web Development</span></div>
+      </article>
 
-    <!-- Power BI -->
-    <article class="proj reveal" style="--pc:var(--teal);--pc-bg:rgba(15,176,163,.12);--pvbg:linear-gradient(150deg,#0FB0A3,#0A6E8F)">
-      <div class="proj-vis">
-        <span class="badge">DASHBOARD</span>
-        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <g stroke="rgba(255,255,255,.35)" stroke-width="1"><line x1="30" y1="40" x2="30" y2="180"/><line x1="30" y1="180" x2="270" y2="180"/></g>
-          <rect x="44" y="56" width="44" height="30" rx="4" fill="#FFFFFF" opacity=".92"/>
-          <rect x="100" y="56" width="44" height="30" rx="4" fill="#FFE08A" opacity=".9"/>
-          <polyline points="40,150 80,120 120,135 160,95 200,108 250,68" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-          <g fill="rgba(255,255,255,.7)"><rect x="170" y="138" width="14" height="42" rx="2"/><rect x="190" y="120" width="14" height="60" rx="2"/><rect x="210" y="150" width="14" height="30" rx="2"/><rect x="230" y="103" width="14" height="77" rx="2"/></g>
-        </svg>
-      </div>
-      <div class="proj-body">
-        <div class="proj-meta"><span class="proj-kpi">4 KPIs · MoM trends</span><span class="proj-date">2025</span></div>
-        <h3>Sales Performance Dashboard</h3>
-        <p>An interactive Power BI dashboard on a retail dataset — revenue, profit, and order KPIs with month-over-month comparisons, a revenue trend line, and product-category breakdowns. Built on a star-schema data model with custom DAX measures and time-intelligence calculations.</p>
-        <div class="proj-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Data Modelling</span><span class="tag">Time Intelligence</span></div>
-      </div>
-    </article>
-
-    <!-- Tuition Centre Database -->
-    <article class="proj reveal" style="--pc:var(--indigo);--pc-bg:rgba(91,83,232,.12);--pvbg:linear-gradient(150deg,#5B53E8,#372BA6)">
-      <div class="proj-vis">
-        <span class="badge">DATABASE · SQL</span>
-        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <g stroke="rgba(255,255,255,.55)" stroke-width="1.4" fill="rgba(255,255,255,.10)">
-            <rect x="36" y="40" width="80" height="56" rx="4"/>
-            <rect x="184" y="40" width="80" height="56" rx="4"/>
-            <rect x="110" y="138" width="80" height="56" rx="4"/>
-          </g>
-          <g stroke="rgba(255,255,255,.85)" stroke-width="1.4">
-            <line x1="36" y1="56" x2="116" y2="56"/><line x1="184" y1="56" x2="264" y2="56"/><line x1="110" y1="154" x2="190" y2="154"/>
-          </g>
-          <g stroke="rgba(255,255,255,.4)" stroke-width="1"><line x1="48" y1="70" x2="104" y2="70"/><line x1="48" y1="82" x2="92" y2="82"/><line x1="196" y1="70" x2="252" y2="70"/><line x1="196" y1="82" x2="240" y2="82"/><line x1="122" y1="168" x2="178" y2="168"/><line x1="122" y1="180" x2="166" y2="180"/></g>
-          <g stroke="#FFE08A" stroke-width="1.6"><path d="M116 68 C 150 68, 150 110, 184 68" fill="none"/><path d="M224 96 C 224 120, 170 120, 150 138" fill="none"/><path d="M76 96 C 76 124, 130 124, 140 138" fill="none"/></g>
-        </svg>
-      </div>
-      <div class="proj-body">
-        <div class="proj-meta"><span class="proj-kpi">Team lead · 10-table schema</span><span class="proj-date">2024</span></div>
-        <h3>Tuition Centre Management System</h3>
-        <p>Led a four-person team to design and build a normalised relational database in IBM DB2 — a ten-table schema (students, staff, teachers, classes, attendance, payments) with a full ERD and data dictionary. Wrote SQL spanning joins and aggregates, views, a GROUP BY/HAVING report, a pass/fail trigger, a stored procedure, and window functions.</p>
-        <div class="proj-tags"><span class="tag">SQL</span><span class="tag">IBM DB2</span><span class="tag">ERD &amp; Normalization</span><span class="tag">Triggers</span><span class="tag">Window Functions</span></div>
-      </div>
-    </article>
-    <article class="proj reveal" style="--pc:var(--coral);--pc-bg:rgba(251,106,91,.12);--pvbg:linear-gradient(150deg,#FB6A5B,#D8345B)">
-      <div class="proj-vis">
-        <span class="badge">ML APP</span>
-        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <g stroke="rgba(255,255,255,.3)" stroke-width="1"><line x1="40" y1="180" x2="260" y2="180"/></g>
-          <path d="M40 175 C 110 175, 130 70, 200 60 C 235 56, 250 54, 260 53 L260 180 L40 180 Z" fill="rgba(255,255,255,.18)"/>
-          <path d="M40 175 C 110 175, 130 70, 200 60 C 235 56, 250 54, 260 53" fill="none" stroke="#FFFFFF" stroke-width="3"/>
-          <circle cx="200" cy="60" r="6" fill="#FFFFFF"/>
-          <line x1="200" y1="60" x2="200" y2="180" stroke="rgba(255,255,255,.6)" stroke-width="1" stroke-dasharray="3 3"/>
-          <text x="208" y="50" fill="#FFFFFF" font-family="monospace" font-size="12">P=0.81</text>
-        </svg>
-      </div>
-      <div class="proj-body">
-        <div class="proj-meta"><span class="proj-kpi">41,188 records</span><span class="proj-date">Nov 2025 – Feb 2026</span></div>
-        <h3>Bank Customer Subscription Predictor</h3>
-        <p>An end-to-end machine-learning web app that classifies term-deposit subscription likelihood. Returns a probability score, risk level, and tailored recommendations in a clean Streamlit interface designed for non-technical users.</p>
-        <div class="proj-tags"><span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Random Forest</span><span class="tag">Streamlit</span></div>
-      </div>
-    </article>
-
-    <!-- Digit recognition -->
-    <article class="proj reveal" style="--pc:var(--amber);--pc-bg:rgba(244,161,38,.15);--pvbg:linear-gradient(150deg,#F4A126,#E8602C)">
-      <div class="proj-vis">
-        <span class="badge">COMPUTER VISION</span>
-        <svg viewBox="0 0 300 220" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-          <rect x="106" y="54" width="88" height="88" rx="6" fill="rgba(0,0,0,.22)"/>
-          <g fill="#FFFFFF"><rect x="130" y="72" width="11" height="11"/><rect x="141" y="72" width="11" height="11"/><rect x="152" y="83" width="11" height="11"/><rect x="152" y="94" width="11" height="11"/><rect x="152" y="105" width="11" height="11"/><rect x="141" y="116" width="11" height="11"/><rect x="130" y="116" width="11" height="11"/></g>
-          <text x="150" y="178" fill="#FFFFFF" font-family="monospace" font-size="22" text-anchor="middle" font-weight="600">→ 7</text>
-        </svg>
-      </div>
-      <div class="proj-body">
-        <div class="proj-meta"><span class="proj-kpi">Real-time inference</span><span class="proj-date">Nov 2025 – Jan 2026</span></div>
-        <h3>Handwritten Digit Recognition</h3>
-        <p>A multi-digit recognition pipeline using classical computer-vision techniques on the MNIST dataset, deployed as a Streamlit app for real-time inference on user input.</p>
-        <div class="proj-tags"><span class="tag">Python</span><span class="tag">MNIST</span><span class="tag">Computer Vision</span><span class="tag">Streamlit</span></div>
-      </div>
-    </article>
+    </div>
   </div>
 </section>
 
-<!-- EXPERIENCE -->
 <section id="experience" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal" style="--sc:var(--amber)"><span class="sec-num">05</span><span class="sec-title">Experience</span><span class="sec-line"></span></div>
-    <div class="reveal">
-      <div class="entry">
-        <div class="role">Research &amp; Data Analysis Intern</div>
-        <div class="org">Merdeka Center for Opinion Research</div>
-        <div class="when">Jul 2025 – Oct 2025</div>
-        <ul>
-          <li>Compiled and organised election datasets across 17 Sabah constituencies to support research and accurate reporting.</li>
-          <li>Assisted in preparing and analysing 10+ Monitoring &amp; Evaluation (M&amp;E) reports for parliamentary and community engagement workshops.</li>
-          <li>Conducted data cleaning, validation, and statistical analysis in Google Sheets to support evidence-based reporting.</li>
-          <li>Coordinated and documented multiple Focus Group Discussions (FGDs), contributing to qualitative analysis and stakeholder reporting.</li>
-        </ul>
-      </div>
+    <div class="section-head"><div><div class="section-kicker">05 · Experience</div><h2 class="section-title">Research experience</h2></div><div class="section-line"></div></div>
+    <div class="timeline reveal">
+      <div class="exp-top"><div><div class="exp-title">Research &amp; Data Analysis Intern</div><div class="exp-org">Merdeka Center for Opinion Research · Petaling Jaya</div></div><div class="exp-date">Jul 2025 – Oct 2025</div></div>
+      <ul>
+        <li>Conducted quantitative and qualitative research supporting public-opinion and social-research projects.</li>
+        <li>Cleaned, validated, analysed, and reported survey data using <strong>SPSS and Google Sheets</strong> to support reliable research outputs.</li>
+        <li>Compiled and organised election datasets across <strong>17 Sabah constituencies</strong> for research and reporting.</li>
+        <li>Supported the preparation and analysis of <strong>10+ Monitoring &amp; Evaluation (M&amp;E) reports</strong> for parliamentary and community engagement initiatives.</li>
+        <li>Supported Focus Group Discussions through respondent coordination, structured note-taking, qualitative analysis, and report preparation.</li>
+        <li>Prepared datasets, presentation materials, and research outputs for workshops, community engagement, and policy-related projects.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<!-- EDUCATION -->
 <section id="education" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head reveal" style="--sc:var(--indigo)"><span class="sec-num">06</span><span class="sec-title">Education</span><span class="sec-line"></span></div>
+    <div class="section-head"><div><div class="section-kicker">06 · Education</div><h2 class="section-title">Education &amp; achievements</h2></div><div class="section-line"></div></div>
     <div class="edu-grid">
-      <div class="edu-card reveal" style="--ec:var(--indigo)"><div class="deg">BCS (Hons.) Data Science</div><div class="inst">Multimedia University (MMU), Cyberjaya · 2023–2026</div><div class="facts">CGPA 3.63 · Dean's List ×3 · MUET Band 4.5</div></div>
-      <div class="edu-card reveal" style="--ec:var(--teal)"><div class="deg">Foundation in Information Technology</div><div class="inst">Multimedia University (MMU), Cyberjaya · 2022–2023</div><div class="facts">CGPA 3.52</div></div>
-      <div class="edu-card reveal" style="--ec:var(--coral)"><div class="deg">SMK (P) Sri Aman</div><div class="inst">Secondary education · 2017–2022</div><div class="facts">SPM 10A's · PT3 9A's</div></div>
-      <div class="edu-card reveal" style="--ec:var(--violet)"><div class="deg">Languages</div><div class="inst">Communication</div><div class="facts">English (Fluent) · Malay (Fluent) · Tamil (Native)</div></div>
+      <div>
+        <div class="edu-card reveal">
+          <h3>Bachelor of Computer Science (Hons.) — Data Science</h3>
+          <div class="inst">Multimedia University (MMU), Cyberjaya</div>
+          <div class="date">Aug 2023 – Jul 2026</div>
+          <div class="facts"><span>CGPA 3.69</span><span>Data Science</span><span>Machine Learning</span><span>Artificial Intelligence</span><span>Statistics</span><span>Database Systems</span><span>Algorithms</span></div>
+        </div>
+        <div class="edu-card foundation reveal">
+          <h3>Foundation in Information Technology</h3>
+          <div class="inst">Multimedia University (MMU), Cyberjaya</div>
+          <div class="date">Aug 2022 – Jul 2023</div>
+          <div class="facts"><span>CGPA 3.52</span></div>
+        </div>
+      </div>
+      <aside class="achievement-card reveal">
+        <h3>Academic recognition</h3>
+        <div class="award-line"><b>Dean's List ×4</b><span>Terms 2310, 2430, 2530 &amp; 2610</span></div>
+        <div class="award-line"><b>1st Runner-Up — Best Project (Data Science)</b><span>Final Year Project · LLM factuality evaluation</span></div>
+        <div class="award-line"><b>Languages</b><span>English · Malay · Tamil</span></div>
+      </aside>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
+<section id="credentials" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head"><div><div class="section-kicker">07 · Professional Development</div><h2 class="section-title">Certificates &amp; learning</h2></div><div class="section-line"></div></div>
+    <p class="section-intro">Selected credentials supporting my foundation in data, AI, cloud, web development, and project work.</p>
+    <div class="credentials">
+      <div class="cred reveal"><div class="cred-mark">IBM</div><div><h3>Data Fundamentals</h3><p>IBM SkillsBuild</p></div></div>
+      <div class="cred reveal"><div class="cred-mark">IBM</div><div><h3>AI Fundamentals: Foundations for Understanding AI</h3><p>IBM SkillsBuild</p></div></div>
+      <div class="cred reveal"><div class="cred-mark">IBM</div><div><h3>Web Development Fundamentals</h3><p>IBM SkillsBuild</p></div></div>
+      <div class="cred reveal"><div class="cred-mark">IBM</div><div><h3>Project Management Fundamentals</h3><p>IBM SkillsBuild</p></div></div>
+      <div class="cred reveal"><div class="cred-mark">AWS</div><div><h3>AWS Cloud Practitioner Essentials</h3><p>Amazon Web Services</p></div></div>
+      <div class="cred reveal"><div class="cred-mark">HP</div><div><h3>Data Science &amp; Analytics</h3><p>HP LIFE</p></div></div>
+      <div class="cred reveal"><div class="cred-mark">AI</div><div><h3>Certificate of Completion: AI Fluency Framework &amp; Foundations</h3><p>Anthropic</p></div></div>
+    </div>
+  </div>
+</section>
+
 <section id="contact" style="padding-top:0">
   <div class="wrap">
     <div class="contact reveal">
-      <h2>Let's talk AI &amp; data.</h2>
-      <p>Open to graduate roles in data, research, NLP, and business intelligence. I'd be glad to walk through any project in detail.</p>
-      <div class="contact-links">
-        <a class="clink" href="mailto:tharraniah18@gmail.com">✉ tharraniah18@gmail.com</a>
-        <a class="clink" href="https://www.linkedin.com/in/tharraniah-t-121938272" target="_blank" rel="noopener">in · LinkedIn</a>
-              </div>
+      <div><h2>Open to graduate opportunities.</h2><p>I am currently exploring entry-level roles in research, data and insights analytics, quantitative analysis, business intelligence, evaluation, and other analytical corporate functions where data and mathematical thinking support decisions.</p></div>
+      <div class="contact-actions"><a href="mailto:tharraniah18@gmail.com">Email me</a><a href="https://www.linkedin.com/in/tharraniah-t-121938272" target="_blank" rel="noopener">LinkedIn ↗</a></div>
     </div>
   </div>
 </section>
+</main>
 
-<footer>
-  <div class="wrap"><div class="small">Designed &amp; built by Tharraniah Tamilwanan · Selangor, Malaysia</div></div>
-</footer>
-
+<footer><div class="wrap">Tharraniah Tamilwanan · Data Science · Research &amp; Analytics · Selangor, Malaysia</div></footer>
 <script>
-  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navlinks');
-  mb&&mb.addEventListener('click',function(){nl.classList.toggle('open')});
-  nl&&nl.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open')})});
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
-  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+const mb=document.getElementById('menuBtn'), nl=document.getElementById('navlinks');
+if(mb)mb.addEventListener('click',()=>nl.classList.toggle('open'));
+if(nl)nl.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nl.classList.remove('open')));
+const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
